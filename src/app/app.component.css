@@ -12,6 +12,12 @@
     color: white; 
 }
 
+.toolbarButton {
+    margin: 5px;
+    background-color: #753300cc;
+    color:white;
+}
+
 .footer {
     position: fixed;
     bottom: 0;
