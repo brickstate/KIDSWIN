@@ -2,12 +2,3 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.toolbar {
-    background-color: #c85800 ; /* any hex, rgb, hsl, or named color */
-    color: white; /* change text color if needed */
-}
-
-.toolbarButtons {
-    
-}
