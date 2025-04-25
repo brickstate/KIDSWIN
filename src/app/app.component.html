@@ -2,11 +2,18 @@
   <img src="assets/kids-win.png" alt="Logo" class="logo" />
   <span><p>KIDSWIN</p></span>
   <span class="spacer"></span>
+  
+  <a mat-flat-button class="toolbar" routerLink="/about">About Us</a>
+  <button (click)="toggleLoginForm()">Login</button>
+  </mat-toolbar>
   <a mat-button class="toolbarButton" routerLink="/">Home</a>
   <a mat-button class="toolbarButton" routerLink="/about">About Us</a>
   <button mat-button>LOGIN</button>
 </mat-toolbar>
 
+  <div *ngIf="showLoginForm" class="login-container">
+    <app-login></app-login> <!-- Your LoginComponent -->
+  </div>
 <app-milestone></app-milestone>
 <router-outlet></router-outlet>
 
