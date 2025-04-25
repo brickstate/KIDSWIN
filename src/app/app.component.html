@@ -6,10 +6,9 @@
   <a mat-flat-button class="toolbar" routerLink="/about">About Us</a>
   <button (click)="toggleLoginForm()">Login</button>
   </mat-toolbar>
-  <a mat-button class="toolbarButton" routerLink="/">Home</a>
-  <a mat-button class="toolbarButton" routerLink="/about">About Us</a>
-  <button mat-button>LOGIN</button>
-</mat-toolbar>
+<a mat-button class="toolbarButton" routerLink="/">Home</a>
+<a mat-button class="toolbarButton" routerLink="/about">About Us</a>
+<button mat-button>LOGIN</button>
 
   <div *ngIf="showLoginForm" class="login-container">
     <app-login></app-login> <!-- Your LoginComponent -->

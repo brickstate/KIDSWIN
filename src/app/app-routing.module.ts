@@ -11,18 +11,16 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent },
   { path: 'parent', component: ParentComponent },
   { path: 'student', component: StudentComponent },
+  {
+    path: 'about',
+    loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
+  },
   { path: 'login', component: LoginComponent }, // Separate route for login
   { path: '**', component: NotFoundComponent } // Catch-all for unknown routes
 ];
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
-const routes: Routes = [
-  {
-    path: 'about',
-    loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
-  },
-  //{ path: '**', component: PageNotFoundComponent }
-];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

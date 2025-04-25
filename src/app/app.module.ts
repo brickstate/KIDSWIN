@@ -15,7 +15,6 @@ import { LoginComponent } from './loginStuff/login/login.component';
 import { NotFoundComponent } from './loginStuff/not-found/not-found.component';
 import { LogoutComponent } from './loginStuff/logout/logout.component';
 
-import { FormsModule } from '@angular/forms';
 import { MilestoneComponent } from './milestone/milestone.component';
 import { AboutInfoComponent } from './about/about-info/about-info.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -29,7 +28,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     StudentComponent,
     LoginComponent,
     NotFoundComponent,
-    LogoutComponent
+    LogoutComponent,
     AppComponent,
     MilestoneComponent, 
     PageNotFoundComponent
@@ -40,7 +39,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AppRoutingModule,
     MatButtonModule,
     MatToolbarModule,
-    FormsModule
+    FormsModule,
     MatToolbarModule,
     MatIconModule
   ],
