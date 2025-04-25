@@ -6,15 +6,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-
+import { FormsModule } from '@angular/forms';
+import { MilestoneComponent } from './milestone/milestone.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MilestoneComponent 
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     MatButtonModule,
     MatToolbarModule

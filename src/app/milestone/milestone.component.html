@@ -1,0 +1,19 @@
+<div>
+    <h2>Milestone Tracker</h2>
+  
+    <label>Date of Birth:</label>
+    <input type="date" [(ngModel)]="birthDate" (change)="updateAge()" />
+  
+    <div *ngIf="milestonesToShow.length > 0">
+      <h3>Milestones for Age {{ ageInMonths }} months</h3>
+      <ul>
+        <li *ngFor="let milestone of milestonesToShow" [style.color]="milestone.completed ? 'green' : 'black'">
+          {{ milestone.description }}
+          <button (click)="toggleCompleted(milestone)">
+            Mark {{ milestone.completed ? 'Incomplete' : 'Completed' }}
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
