@@ -7,18 +7,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { FormsModule } from '@angular/forms';
+import { MilestoneComponent } from './milestone/milestone.component';
 import { AboutInfoComponent } from './about/about-info/about-info.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent,
+    MilestoneComponent, 
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     MatButtonModule,
     MatToolbarModule,
