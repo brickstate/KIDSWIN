@@ -1,0 +1,36 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 16px;
+}
+  
+.toolbar {
+    background-color: #c85800 ;
+    color: white; 
+}
+
+.toolbarButton {
+    margin: 5px;
+    background-color: #753300cc;
+    color:white;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    z-index: 1000;
+    background-color: #c85800 ;
+}
+  
+.footer-text {
+    color: white;
+}
