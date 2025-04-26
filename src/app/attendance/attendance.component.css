@@ -1,0 +1,21 @@
+.attendance {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: lightgray;
+  }
+  

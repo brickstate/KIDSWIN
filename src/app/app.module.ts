@@ -15,6 +15,8 @@ import { LoginComponent } from './loginStuff/login/login.component';
 import { NotFoundComponent } from './loginStuff/not-found/not-found.component';
 import { LogoutComponent } from './loginStuff/logout/logout.component';
 
+import { AttendanceComponent } from './attendance/attendance.component';
+
 import { MilestoneComponent } from './milestone/milestone.component';
 import { AboutInfoComponent } from './about/about-info/about-info.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -29,8 +31,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     LoginComponent,
     NotFoundComponent,
     LogoutComponent,
-    AppComponent,
     MilestoneComponent, 
+    AttendanceComponent,
     PageNotFoundComponent
   ],
   imports: [
