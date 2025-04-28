@@ -20,6 +20,7 @@ import { AttendanceComponent } from './attendance/attendance.component';
 import { MilestoneComponent } from './milestone/milestone.component';
 import { AboutInfoComponent } from './about/about-info/about-info.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { StudentDetailComponent } from './student-detail/student-detail.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     LogoutComponent,
     MilestoneComponent, 
     AttendanceComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    StudentDetailComponent
   ],
   imports: [
     BrowserModule,

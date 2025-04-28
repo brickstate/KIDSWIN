@@ -5,6 +5,7 @@ import { ParentComponent } from '../app/loginStuff/parent/parent.component';
 import { StudentComponent } from '../app/loginStuff/student/student.component';
 import { LoginComponent } from '../app/loginStuff/login/login.component';
 import { AttendanceComponent } from './attendance/attendance.component';
+import { StudentDetailComponent } from './student-detail/student-detail.component';
 import { NotFoundComponent } from '../app/loginStuff/not-found/not-found.component';
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   },
   { path: 'login', component: LoginComponent }, // Separate route for login
   { path: 'attendance', component: AttendanceComponent},
+  { path: 'student-detail/:id', component: StudentDetailComponent },
   { path: '**', component: NotFoundComponent } // Catch-all for unknown routes
   
 ];
