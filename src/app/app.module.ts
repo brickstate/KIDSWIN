@@ -21,6 +21,10 @@ import { MilestoneComponent } from './milestone/milestone.component';
 import { AboutInfoComponent } from './about/about-info/about-info.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsComponent } from './forms/forms.component';
+
+
 
 @NgModule({
   declarations: [
@@ -33,7 +37,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     LogoutComponent,
     MilestoneComponent, 
     AttendanceComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    FormsComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +48,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MatToolbarModule,
     FormsModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
