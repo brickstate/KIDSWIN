@@ -6,8 +6,9 @@
   
   form {
     border: 1px solid #ccc;
-    padding: 1rem;
+    padding: 20px;
     margin-bottom: 2rem;
+    margin-right: 10px;
     border-radius: 8px;
   }
   
@@ -15,7 +16,7 @@
     display: block;
     margin-bottom: 1rem;
     width: 100%;
-    padding: 0.5rem;
+    margin-right: 10px;
   }
   
   button {

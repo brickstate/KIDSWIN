@@ -20,42 +20,48 @@ export class FormsComponent implements OnInit{
     countyForm: { completed: false },
     centerForm: { completed: false }
   };
+  
 
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.federalForm = this.fb.group({
-      name: ['', Validators.required],
-      dob: ['', Validators.required],
-      address: ['', Validators.required]
+      fullName: ['', Validators.required],
+      ssn: ['', Validators.required],
+      citizenship: ['', Validators.required]
     });
-  
+    
     this.stateForm = this.fb.group({
-      parentName: ['', Validators.required],
-      emergencyContact: ['', Validators.required]
+      address: ['', Validators.required],
+      childAge: ['', Validators.required],
+      parentContact: ['', Validators.required]
     });
-  
+    
     this.countyForm = this.fb.group({
       immunizationRecord: ['', Validators.required],
-      allergyInfo: ['', Validators.required]
+      proofOfResidence: ['', Validators.required]
     });
-  
+    
     this.centerForm = this.fb.group({
-      enrollmentDate: ['', Validators.required],
-      classroom: ['', Validators.required]
+      emergencyContactName: ['', Validators.required],
+      emergencyContactPhone: ['', Validators.required],
+      allergies: ['']  // optional field
     });
   
     this.loadFormsFromSession();
   
-    this.setupFormListeners();
+    //this alwasy listens to changes and will 
+    //this.setupFormListeners();
   }
 
+  /*
   setupFormListeners() {
     this.federalForm.valueChanges.subscribe(() => this.saveForm('federalForm', this.federalForm));
     this.stateForm.valueChanges.subscribe(() => this.saveForm('stateForm', this.stateForm));
     this.countyForm.valueChanges.subscribe(() => this.saveForm('countyForm', this.countyForm));
     this.centerForm.valueChanges.subscribe(() => this.saveForm('centerForm', this.centerForm));
   }
+  */
 
   //maybe delete this method?
   saveForm(formKey: string, form: FormGroup) {
@@ -115,19 +121,27 @@ export class FormsComponent implements OnInit{
   }
 
   onSubmitFederal() {
-    console.log('Federal Form:', this.federalForm.value);
+    if (this.federalForm.valid) {
+      this.saveForm('federalForm', this.federalForm);
+    }
   }
-
+  
   onSubmitState() {
-    console.log('State Form:', this.stateForm.value);
+    if (this.stateForm.valid) {
+      this.saveForm('stateForm', this.stateForm);
+    }
   }
-
+  
   onSubmitCounty() {
-    console.log('County Form:', this.countyForm.value);
+    if (this.countyForm.valid) {
+      this.saveForm('countyForm', this.countyForm);
+    }
   }
-
+  
   onSubmitCenter() {
-    console.log('Center Form:', this.centerForm.value);
+    if (this.centerForm.valid) {
+      this.saveForm('centerForm', this.centerForm);
+    }
   }
 
 }
