@@ -19,12 +19,11 @@ const routes: Routes = [
   },
   { path: 'login', component: LoginComponent }, // Separate route for login
   { path: 'attendance', component: AttendanceComponent},
-  { path: 'student-detail/:id', component: StudentDetailComponent },
+  { path: 'student-detail', component: StudentDetailComponent }, 
   { path: '**', component: NotFoundComponent } // Catch-all for unknown routes
   
 ];
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
 
 
 @NgModule({
