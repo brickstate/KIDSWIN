@@ -22,6 +22,10 @@ import { AboutInfoComponent } from './about/about-info/about-info.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsComponent } from './forms/forms.component';
+
+
 
 @NgModule({
   declarations: [
@@ -35,7 +39,8 @@ import { StudentDetailComponent } from './student-detail/student-detail.componen
     MilestoneComponent, 
     AttendanceComponent,
     PageNotFoundComponent,
-    StudentDetailComponent
+    StudentDetailComponent,
+    FormsComponent
   ],
   imports: [
     BrowserModule,
@@ -45,11 +50,11 @@ import { StudentDetailComponent } from './student-detail/student-detail.componen
     MatToolbarModule,
     FormsModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
 
-//test
