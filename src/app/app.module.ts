@@ -20,6 +20,7 @@ import { AttendanceComponent } from './attendance/attendance.component';
 import { MilestoneComponent } from './milestone/milestone.component';
 import { AboutInfoComponent } from './about/about-info/about-info.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { StudentDetailComponent } from './student-detail/student-detail.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsComponent } from './forms/forms.component';
@@ -38,6 +39,7 @@ import { FormsComponent } from './forms/forms.component';
     MilestoneComponent, 
     AttendanceComponent,
     PageNotFoundComponent,
+    StudentDetailComponent,
     FormsComponent
   ],
   imports: [
@@ -56,4 +58,3 @@ import { FormsComponent } from './forms/forms.component';
 })
 export class AppModule { }
 
-//test
