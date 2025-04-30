@@ -1,14 +1,35 @@
+<!-- Header (mat-toolbar) with navigation and login button -->
 <mat-toolbar class="toolbar">
   <img src="assets/kids-win.png" alt="Logo" class="logo" />
   <span><p>KIDSWIN</p></span>
   <span class="spacer"></span>
+
+  <!-- Navigation buttons -->
+  <a mat-flat-button class="toolbar" routerLink="/about">About Us</a>
   <a mat-button class="toolbarButton" routerLink="/">Home</a>
-  <a mat-button class="toolbarButton" routerLink="/about">About Us</a>
-  <button mat-button>LOGIN</button>
+
+  <!-- Login Button -->
+  <button (click)="toggleLoginForm()">Login</button>
 </mat-toolbar>
 
+<!-- Conditional Login Form (appears when the login button is clicked) -->
+<div *ngIf="showLoginForm" class="login-container">
+  <app-login></app-login> <!-- Your LoginComponent -->
+</div>
+
+<!-- Main content, where milestone component and router-outlet go -->
+<app-milestone></app-milestone>
 <router-outlet></router-outlet>
 
+<!-- Link to attendence page for now -->
+<br><br>
+<a routerLink="/attendance">Attendance for [student]</a>
+
+<!-- Section for forms 
+  Can move this inside of student view for particular forms and status of forms -->
+<app-forms></app-forms>
+
+<!-- Footer (mat-toolbar) -->
 <mat-toolbar class="footer">
   <span class="footer-text">© 2025 KidsWin. All rights reserved.</span>
 </mat-toolbar>

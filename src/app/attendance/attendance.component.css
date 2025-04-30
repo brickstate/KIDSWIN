@@ -1,0 +1,25 @@
+table {
+  width: 250px;
+  margin: 20px;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+td {
+  padding: 10px;
+  border: 1px solid #171717;
+}
+
+.studentListItem {
+  cursor: pointer;
+}
+
+.studentListItem:hover {
+  background-color: #f0f0f0;
+}
+
+.click {
+  color: #1a0dab;
+  text-decoration: underline;
+}
