@@ -30,4 +30,23 @@
   button:disabled {
     background-color: #999;
   }
+
+  .form-display {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-display table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .form-display td {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+  }
+  
+  .form-display td:first-child {
+    font-weight: bold;
+    background-color: #f9f9f9;
+  }
   
