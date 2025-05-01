@@ -1,0 +1,10 @@
+.full-width {
+    width: 100%;
+  }
+  
+  .user-notes-box {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }

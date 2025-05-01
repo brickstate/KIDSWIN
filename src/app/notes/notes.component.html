@@ -1,0 +1,15 @@
+<div class="notes-container" style="max-width: 400px; margin: 20px;">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Select User</mat-label>
+      <mat-select [(value)]="selectedUserId" (selectionChange)="onUserChange()">
+        <mat-option *ngFor="let user of users" [value]="user.id">
+          {{ user.name.firstname }} {{ user.name.lastname }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <div *ngIf="selectedUserId" class="user-notes-box">
+      <p><strong>Selected User ID:</strong> {{ selectedUserId }}</p>
+      <!-- Expand this section as needed -->
+    </div>
+  </div>

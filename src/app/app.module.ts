@@ -4,7 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +24,13 @@ import { StudentDetailComponent } from './student-detail/student-detail.componen
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsComponent } from './forms/forms.component';
+import { NotesComponent } from './notes/notes.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+
 
 
 
@@ -40,7 +47,8 @@ import { FormsComponent } from './forms/forms.component';
     AttendanceComponent,
     PageNotFoundComponent,
     StudentDetailComponent,
-    FormsComponent
+    FormsComponent,
+    NotesComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +59,13 @@ import { FormsComponent } from './forms/forms.component';
     FormsModule,
     MatToolbarModule,
     MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
