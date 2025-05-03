@@ -10,7 +10,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminComponent } from './loginStuff/admin/admin.component';
 import { ParentComponent } from './loginStuff/parent/parent.component';
-import { StudentComponent } from './loginStuff/student/student.component';
 import { LoginComponent } from './loginStuff/login/login.component';
 import { NotFoundComponent } from './loginStuff/not-found/not-found.component';
 import { LogoutComponent } from './loginStuff/logout/logout.component';
@@ -32,7 +31,6 @@ import { FormsComponent } from './forms/forms.component';
     AppComponent,
     AdminComponent,
     ParentComponent,
-    StudentComponent,
     LoginComponent,
     NotFoundComponent,
     LogoutComponent,

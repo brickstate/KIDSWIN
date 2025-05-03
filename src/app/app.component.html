@@ -9,8 +9,27 @@
   <a mat-button class="toolbarButton" routerLink="/">Home</a>
 
   <!-- Login Button -->
-  <button (click)="toggleLoginForm()">Login</button>
+  <span *ngIf="!auth.isLoggedIn()">
+    <button mat-button (click)="showLogin('Teacher')">Login as Teacher</button>
+    <button mat-button (click)="showLogin('Parent')">Login as Parent</button>
+  </span>
+  
+  <span *ngIf="auth.isLoggedIn()">
+    Logged in as {{ auth.role }}
+    <button mat-button (click)="logout()">Logout</button>
+  </span>
+
 </mat-toolbar>
+
+<!-- Login Functionality --->
+  <div *ngIf="showForm">
+    <input [(ngModel)]="username" placeholder="Username">
+    <input [(ngModel)]="password" placeholder="Password" type="password">
+    <button (click)="submitLogin()">Submit</button>
+    <button (click)="cancelLogin()">Cancel</button>
+    <p *ngIf="loginFailed">Login failed</p>
+  </div>
+  
 
 <!-- Conditional Login Form (appears when the login button is clicked) -->
 <div *ngIf="showLoginForm" class="login-container">
