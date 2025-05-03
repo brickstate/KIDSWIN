@@ -7,6 +7,7 @@
       <th>Check-In</th>
       <th>Check-Out</th>
       <th>Status</th>
+      <th>Discipline</th>
       <th>Notes</th>
     </tr>
   </thead>
@@ -18,6 +19,12 @@
         
         <td *ngIf="attendenceInfo.presentOrAbsent === 'Present'">Present</td>
         <td *ngIf="attendenceInfo.presentOrAbsent !== 'Present'">Absent</td>
+
+        <td class="discipline">
+          <span *ngIf="attendenceInfo.disciplineStatus === 'Good'" class="status-circle good" title="Moderate"></span>
+          <span *ngIf="attendenceInfo.disciplineStatus === 'Moderate'" class="status-circle moderate" title="Moderate"></span>
+          <span *ngIf="attendenceInfo.disciplineStatus === 'Bad'" class="status-circle bad" title="Bad"></span>
+        </td>
 
         <td>{{ attendenceInfo.notes }}</td>
     </tr>

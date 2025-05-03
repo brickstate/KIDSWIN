@@ -1,0 +1,23 @@
+.status-circle {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+
+}
+
+.good {
+    background-color: green;
+}
+
+.moderate {
+    background-color: yellow;
+}
+
+.bad {
+    background-color: red;
+}
+
+td.discipline {
+    text-align: center;
+}
