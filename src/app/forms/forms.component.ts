@@ -14,6 +14,8 @@ export class FormsComponent implements OnInit{
   countyForm!: FormGroup;
   centerForm!: FormGroup;
 
+  objectKeys = Object.keys;
+
   formStatus: { [key: string]: { completed: boolean; completedDate?: string } } = {
     federalForm: { completed: false },
     stateForm: { completed: false },

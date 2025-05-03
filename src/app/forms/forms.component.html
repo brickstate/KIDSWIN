@@ -6,49 +6,65 @@
     <h2>Form Status</h2>
 <ul>
   <li>Federal Form: 
-    <span *ngIf="formStatus['federalForm'].completed">
+    <span *ngIf="formStatus['federalForm'].completed" style="color: green;">
       Completed on {{ formStatus['federalForm'].completedDate }}
+      <mat-icon style="vertical-align: middle; color: green;">check_circle</mat-icon>
     </span>
-    <span *ngIf="!formStatus['federalForm'].completed">
+    <span *ngIf="!formStatus['federalForm'].completed" style="color: red;">
       Not completed
+      <mat-icon style="vertical-align: middle; color: red;">cancel</mat-icon>
     </span>
   </li>
   <li>State Form: 
-    <span *ngIf="formStatus['stateForm'].completed">
+    <span *ngIf="formStatus['stateForm'].completed" style="color: green;">
       Completed on {{ formStatus['stateForm'].completedDate }}
+      <mat-icon style="vertical-align: middle; color: green;">check_circle</mat-icon>
     </span>
-    <span *ngIf="!formStatus['stateForm'].completed">
+    <span *ngIf="!formStatus['stateForm'].completed" style="color: red;">
       Not completed
+      <mat-icon style="vertical-align: middle; color: red;">cancel</mat-icon>
     </span>
   </li>
   <li>County Form: 
-    <span *ngIf="formStatus['countyForm'].completed">
+    <span *ngIf="formStatus['countyForm'].completed" style="color: green;">
       Completed on {{ formStatus['countyForm'].completedDate }}
+      <mat-icon style="vertical-align: middle; color: green;">check_circle</mat-icon>
     </span>
-    <span *ngIf="!formStatus['countyForm'].completed">
+    <span *ngIf="!formStatus['countyForm'].completed" style="color: red;">
       Not completed
+      <mat-icon style="vertical-align: middle; color: red;">cancel</mat-icon>
     </span>
   </li>
   <li>Center Form: 
-    <span *ngIf="formStatus['centerForm'].completed">
+    <span *ngIf="formStatus['centerForm'].completed" style="color: green;">
       Completed on {{ formStatus['centerForm'].completedDate }}
+      <mat-icon style="vertical-align: middle; color: green;">check_circle</mat-icon>
     </span>
-    <span *ngIf="!formStatus['centerForm'].completed">
+    <span *ngIf="!formStatus['centerForm'].completed" style="color: red;">
       Not completed
+      <mat-icon style="vertical-align: middle; color: red;">cancel</mat-icon>
     </span>
   </li>
 </ul>
 
-
     <!-- Completed forms section-->
     <div *ngFor="let formName of ['federalForm', 'stateForm', 'countyForm', 'centerForm']">
-        <ng-container *ngIf="getStoredForm(formName) as formData">
-          <div *ngIf="formData">
-            <h3>{{ formName }} Data</h3>
-            <pre>{{ formData | json }}</pre>
-          </div>
-        </ng-container>
-      </div>
+      <ng-container *ngIf="getStoredForm(formName) as formData">
+        <div class="form-display" *ngIf="formData">
+          <h3>{{ formName | titlecase }} Data</h3>
+          <table>
+            <tbody>
+              <tr *ngFor="let key of objectKeys(formData)">
+                <td><strong>{{ key | titlecase }}</strong></td>
+                <td>{{ formData[key] }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </ng-container>
+    </div>
+    
+
 <!--  Working out bug on below section might delete
 <div *ngIf="federalForm.valid">
   <h3>Federal Form</h3>
