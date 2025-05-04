@@ -6,9 +6,8 @@
   </thead>
   <tbody>
     <tr *ngFor="let student of students" class="studentListItem" (click)="goToStudentDetail(student.id)">
-      <td><span class="click">{{ student.name }}</span></td>
+      <td><b>{{ student.name }}</b></td>
     </tr>
     </tbody>
   </table>
-  
 <div> 
