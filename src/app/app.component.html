@@ -5,11 +5,11 @@
   <span class="spacer"></span>
 
   <!-- Navigation buttons -->
-  <a mat-flat-button class="toolbar" routerLink="/about">About Us</a>
-  <a mat-button class="toolbarButton" routerLink="/">Home</a>
+  <button mat-flat-button class="toolbarButton" routerLink="/about">About Us</button>
+  <button mat-button class="toolbarButton" routerLink="/home">Home</button>
 
   <!-- Login Button -->
-  <button (click)="toggleLoginForm()">Login</button>
+  <button mat-flat-button class="toolbarButton" routerLink="/login">Login</button>
 </mat-toolbar>
 
 <!-- Conditional Login Form (appears when the login button is clicked) -->
@@ -17,18 +17,18 @@
   <app-login></app-login> <!-- Your LoginComponent -->
 </div>
 
-<!-- Main content, where milestone component and router-outlet go -->
-<app-milestone></app-milestone>
+
 <router-outlet></router-outlet>
 
-<!-- Attendence Button, access the attendence log per student -->
-<button class="attendanceButton" routerLink="/attendance">
-  Student Attendance
-</button>
 
-<!-- Section for forms 
-  Can move this inside of student view for particular forms and status of forms -->
-<app-forms></app-forms>
+
+<!-- TODO -->
+<!--
+  MOVE,, this inside of parent view for particular forms and status of forms 
+  NEED,, add data admin view of forms for specific set of students
+-->
+<!-- Section for forms -->
+<!--<app-forms></app-forms>-->
 
 <!-- Footer (mat-toolbar) -->
 <mat-toolbar class="footer">
