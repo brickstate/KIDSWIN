@@ -18,3 +18,9 @@ td {
 .studentListItem:hover {
   background-color: #f0f0f0;
 }
+
+.dashboardButton { 
+  background-color: #e53935;
+  color: white;
+  cursor: pointer;
+}

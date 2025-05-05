@@ -1,3 +1,12 @@
+<button class="dashboardButton" *ngIf="router.url.includes('admin/attendance/student-detail')" routerLink="/admin">
+  Dashboard (Admin) 
+</button>
+
+<button class="dashboardButton" *ngIf="router.url.includes('parent/attendance/student-detail')" routerLink="/parent">
+  Dashboard (Parent) 
+</button>
+
+
 <h2>Attendance for {{ studentName }}</h2>
 
 <table>

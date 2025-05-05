@@ -1,3 +1,32 @@
-<h1>Parent Dashboard</h1>
-<!-- Parent-specific content here -->
-<button (click)="logout()">Logout</button>
+
+<div class="parent-dashboard" >
+    <h1>Parent Dashboard</h1>
+    
+    <div class="button-group">
+    <button class="login-button" (click)="logout()">Logout</button>
+    
+    <!-- Admin-specific content here -->
+    
+    
+    <!-- 
+      TODO
+        need to move this inside of the admin login // create a display for parent view on the child 
+    -->
+    <!-- Student milestone component  -->
+    <!--<app-milestone></app-milestone> -->
+    <button class="" routerLink="/parent/milestone">Student Milestones</button>
+    
+    <!-- TODO-->
+    <!-- move into admin view // add a parent view for one specific child "who is your kid"-->
+    <!-- Attendence Button, access the attendence log per student -->
+    <button class="attendanceButton" routerLink="/parent/attendance">Student Attendance</button>
+    
+    <!-- 
+    TODO
+        need to have a simple forms output view for admin && completed form data for certain students
+    -->
+    <button class="" routerLink="/parent/forms">Legal Forms</button>
+    
+
+    </div>
+</div>

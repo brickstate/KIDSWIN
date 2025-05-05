@@ -34,3 +34,8 @@ td {
 }
 
   
+.dashboardButton { 
+    background-color: #e53935;
+    color: white;
+    cursor: pointer;
+  }

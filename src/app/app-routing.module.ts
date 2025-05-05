@@ -9,6 +9,8 @@ import { StudentDetailComponent } from './student-detail/student-detail.componen
 import { NotFoundComponent } from '../app/loginStuff/not-found/not-found.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { MilestoneComponent } from './milestone/milestone.component';
+import { FormsComponent } from './forms/forms.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent }, // Set to a default component landing page to "Get Started"
@@ -20,9 +22,15 @@ const routes: Routes = [
     loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
   },
   { path: 'login', component: LoginComponent }, // Separate route for login
-  { path: 'attendance', component: AttendanceComponent},
-  { path: 'student-detail', component: StudentDetailComponent }, 
+  { path: 'admin/attendance', component: AttendanceComponent},
+  { path: 'admin/milestone', component: MilestoneComponent},
+  { path: 'parent/attendance/student-detail', component: StudentDetailComponent },
+  { path: 'admin/attendance/student-detail', component: StudentDetailComponent },
+  { path: 'student-detail', component: StudentDetailComponent },   
   { path: 'home', component: HomePageComponent },
+  { path: 'parent/forms', component: FormsComponent},
+  { path: 'parent/attendance', component: AttendanceComponent},
+  { path: 'parent/milestone', component: MilestoneComponent},
   { path: '**', component: NotFoundComponent } // Catch-all for unknown routes
   
 ];
