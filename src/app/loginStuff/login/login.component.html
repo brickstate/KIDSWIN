@@ -1,17 +1,24 @@
-<h1>Login</h1>
+<!-- login is now a "page" need to have it own routing -->
+<div class="login-container">
+  <div class="login-card">
+    <h1>Login</h1>
 
-<!-- Role selection options -->
-<div>
-  <label>
-    <input type="radio" [(ngModel)]="selectedRole" value="admin" /> Admin
-  </label>
-  <label>
-    <input type="radio" [(ngModel)]="selectedRole" value="parent" /> Parent
-  </label>
-  <label>
-    <input type="radio" [(ngModel)]="selectedRole" value="student" /> Student
-  </label>
+    <!-- Role selection options -->
+    <div class="role-selection">
+      <label>
+        <input type="radio" [(ngModel)]="selectedRole" value="admin" /> Admin
+      </label>
+      <label>
+        <input type="radio" [(ngModel)]="selectedRole" value="parent" /> Parent
+      </label>
+      <!--
+      <label>
+        <input type="radio" [(ngModel)]="selectedRole" value="student" /> Student
+      </label>
+      -->
+    </div>
+
+    <!-- Login button -->
+    <button (click)="login()">Login</button>
+  </div>
 </div>
-
-<!-- Login button -->
-<button (click)="login()">Login</button>

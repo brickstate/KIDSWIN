@@ -24,6 +24,7 @@ import { StudentDetailComponent } from './student-detail/student-detail.componen
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsComponent } from './forms/forms.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 
 
@@ -40,7 +41,8 @@ import { FormsComponent } from './forms/forms.component';
     AttendanceComponent,
     PageNotFoundComponent,
     StudentDetailComponent,
-    FormsComponent
+    FormsComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,

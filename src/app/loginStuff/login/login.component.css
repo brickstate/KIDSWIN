@@ -1,0 +1,43 @@
+/* Fullscreen container with center alignment */
+.login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+  }
+  
+  /* Card-like login form */
+  .login-card {
+    background-color: white;
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  /* Role radio buttons styling */
+  .role-selection {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  /* Button styling */
+  button {
+    padding: 0.7rem 2rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

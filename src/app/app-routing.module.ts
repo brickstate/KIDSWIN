@@ -7,9 +7,11 @@ import { LoginComponent } from '../app/loginStuff/login/login.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
 import { NotFoundComponent } from '../app/loginStuff/not-found/not-found.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 const routes: Routes = [
-  { path: '', component: AdminComponent }, // Set to a default component (e.g., AdminComponent or Dashboard)
+  { path: '', component: HomePageComponent }, // Set to a default component landing page to "Get Started"
   { path: 'admin', component: AdminComponent },
   { path: 'parent', component: ParentComponent },
   { path: 'student', component: StudentComponent },
@@ -20,10 +22,11 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent }, // Separate route for login
   { path: 'attendance', component: AttendanceComponent},
   { path: 'student-detail', component: StudentDetailComponent }, 
+  { path: 'home', component: HomePageComponent },
   { path: '**', component: NotFoundComponent } // Catch-all for unknown routes
   
 ];
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 
 
 @NgModule({
