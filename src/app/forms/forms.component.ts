@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormForTeachParService } from '../form-for-teach-par.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-forms',
@@ -20,7 +21,7 @@ export class FormsComponent implements OnInit {
   centerForm: { completed: false }
 };
 
-  constructor(private fb: FormBuilder, private formService: FormForTeachParService) {}
+  constructor(public router: Router, private fb: FormBuilder, private formService: FormForTeachParService ) {}
 
 
   ngOnInit(): void {
