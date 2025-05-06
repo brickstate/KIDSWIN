@@ -1,3 +1,11 @@
+<button class="dashboardButton" *ngIf="router.url.includes('/admin/milestone')" routerLink="/admin">
+  Dashboard (Admin) 
+</button>
+
+<button class="dashboardButton" *ngIf="router.url.includes('/parent/milestone')" routerLink="/parent">
+  Dashboard (Parent)
+</button>
+
 <div>
     <h2>Milestone Tracker</h2>
   

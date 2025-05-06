@@ -1,14 +1,14 @@
 table {
-  width: 250px;
-  margin: 20px;
-  border-collapse: collapse;
   font-family: Arial, sans-serif;
   text-align: center;
+  border-collapse: collapse;
+  width: 250px;
+  margin: 20px;
 }
 
 td {
-  padding: 10px;
   border: 1px solid #171717;
+  padding: 10px;
 }
 
 .studentListItem {
@@ -19,7 +19,8 @@ td {
   background-color: #f0f0f0;
 }
 
-.click {
-  color: #1a0dab;
-  text-decoration: underline;
+.dashboardButton { 
+  background-color: #e53935;
+  color: white;
+  cursor: pointer;
 }

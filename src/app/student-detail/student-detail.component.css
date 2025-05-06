@@ -1,0 +1,41 @@
+h2 {
+    margin: 27px 0px 0px 20px;
+}
+
+table {
+    font-family: Arial, sans-serif;
+    width: 910px;
+    margin: 10px 0px 0px 20px;
+    border-collapse: collapse;
+    font-size: 16px;
+    border: 2px solid black;
+}
+  
+th {
+    background-color: #e2e2e2;
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+}
+  
+td {
+    padding: 10px;
+    border: 1px solid black;
+}
+  
+.present {
+    color: rgb(32, 156, 69);
+    font-weight: bold;
+}
+  
+.absent {
+    color: rgb(231, 29, 29);
+    font-weight: bold;
+}
+
+  
+.dashboardButton { 
+    background-color: #e53935;
+    color: white;
+    cursor: pointer;
+  }

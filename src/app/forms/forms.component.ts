@@ -20,10 +20,8 @@ export class FormsComponent implements OnInit {
   centerForm: { completed: false }
 };
 
-  constructor(
-    private fb: FormBuilder,
-    private formService: FormForTeachParService
-  ) {}
+  constructor(private fb: FormBuilder, private formService: FormForTeachParService) {}
+
 
   ngOnInit(): void {
     this.initializeForms();

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 interface Milestone {
   ageInMonths: number;
@@ -12,6 +13,9 @@ interface Milestone {
   styleUrls: ['./milestone.component.css']
 })
 export class MilestoneComponent {
+
+  constructor(public router: Router ) {} 
+
   birthDate: string = '';
   ageInMonths: number = 0;
 

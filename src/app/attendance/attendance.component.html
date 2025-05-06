@@ -1,4 +1,12 @@
+<button class="dashboardButton" *ngIf="router.url.includes('/admin/attendance')" routerLink="/admin">
+  Dashboard (Admin) 
+</button>
+
+<button class="dashboardButton" *ngIf="router.url.includes('/parent/attendance')" routerLink="/parent">
+  Dashboard (Parent)
+</button>
 <div class="attendance">
+  <h1>Student Attendance</h1>
   <table>
     <thead>
     <tr>
@@ -6,9 +14,8 @@
   </thead>
   <tbody>
     <tr *ngFor="let student of students" class="studentListItem" (click)="goToStudentDetail(student.id)">
-      <td><span class="click">{{ student.name }}</span></td>
+      <td><b>{{ student.name }}</b></td>
     </tr>
     </tbody>
   </table>
-  
 <div> 

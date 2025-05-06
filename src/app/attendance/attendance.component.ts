@@ -13,7 +13,7 @@ export class AttendanceComponent implements OnInit {
 
   constructor(
     private studentService: StudentService, 
-    private router: Router
+    public router: Router
   ) {}
 
   ngOnInit(): void {
@@ -22,6 +22,15 @@ export class AttendanceComponent implements OnInit {
 
   goToStudentDetail(id: number): void {
     this.studentService.selectedStudentId = id;
-    this.router.navigate(['/student-detail']);
+    //this.router.navigate(['/student-detail']);
+
+    //helping nest the components with the routes for each dashboard view
+    const basePath = this.router.url.includes('/admin/attendance')
+    ? '/admin/attendance/student-detail'
+    : this.router.url.includes('/parent/attendance')
+      ? '/parent/attendance/student-detail'
+      : '/student-detail'; // fallback if neither path matches
+
+  this.router.navigate([basePath]);
   }
 }

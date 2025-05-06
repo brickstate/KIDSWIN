@@ -1,5 +1,11 @@
+<button class="dashboardButton" *ngIf="router.url.includes('admin/forms')" routerLink="/admin">
+  Dashboard (Admin) 
+</button>
 
-<hr>
+<button class="dashboardButton" *ngIf="router.url.includes('parent/forms')" routerLink="/parent">
+  Dashboard (Parent) 
+</button>
+
 <div class="forms-container">
 
     <!-- Forms Status section-->
