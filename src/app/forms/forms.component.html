@@ -64,25 +64,6 @@
       </ng-container>
     </div>
     
-
-<!--  Working out bug on below section might delete
-<div *ngIf="federalForm.valid">
-  <h3>Federal Form</h3>
-  <pre>{{ federalForm.value | json }}</pre>
-</div>
-<div *ngIf="stateForm.valid">
-  <h3>State Form</h3>
-  <pre>{{ stateForm.value | json }}</pre>
-</div>
-<div *ngIf="countyForm.valid">
-  <h3>County Form</h3>
-  <pre>{{ countyForm.value | json }}</pre>
-</div>
-<div *ngIf="centerForm.valid">
-  <h3>Center Form</h3>
-  <pre>{{ centerForm.value | json }}</pre>
-</div>
--->
     <!-- Below are the forms that take in the data for (?)Student -->
     <h2>Federal Form</h2>
     <form [formGroup]="federalForm" (ngSubmit)="onSubmitFederal()">
@@ -97,8 +78,8 @@
       <label>Citizenship:</label>
       <input formControlName="citizenship" type="text">
       <br>
-  
-      <button type="submit" [disabled]="!federalForm.valid">Submit Federal Form</button>
+      <button [disabled]="!federalForm.valid" (click)="submitForm('federalForm')">
+        Submit Federal Form </button>      
     </form>
   
     <h2>State Form</h2>
@@ -115,7 +96,9 @@
       <input formControlName="parentContact" type="text">
       <br>
   
-      <button type="submit" [disabled]="!stateForm.valid">Submit State Form</button>
+      <button [disabled]="!stateForm.valid" (click)="submitForm('stateForm')">
+        Submit State Form
+      </button>
     </form>
   
     <h2>County Form</h2>
@@ -128,7 +111,9 @@
       <input formControlName="proofOfResidence" type="text">
       <br>
   
-      <button type="submit" [disabled]="!countyForm.valid">Submit County Form</button>
+      <button [disabled]="!countyForm.valid" (click)="submitForm('countyForm')">
+        Submit County Form
+      </button>
     </form>
   
     <h2>Center Internal Form</h2>
@@ -145,7 +130,9 @@
       <input formControlName="allergies" type="text">
       <br>
   
-      <button type="submit" [disabled]="!centerForm.valid">Submit Center Form</button>
+      <button [disabled]="!centerForm.valid" (click)="submitForm('centerForm')">
+        Submit Center Form
+      </button>
     </form>
   </div>
   <hr>

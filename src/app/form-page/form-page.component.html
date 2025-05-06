@@ -1,0 +1,20 @@
+<!-- Parent view: load actual form -->
+<div *ngIf="auth.role === 'Parent'">
+    <app-forms></app-forms> 
+  </div>
+  
+<!-- Teacher view: don't load actual form -->
+  <div *ngIf="auth.role === 'Teacher'" class="teacher-status">
+    <h3>Parent Submission Status</h3>
+    <ul>
+      <li *ngFor="let formName of ['federalForm', 'stateForm', 'countyForm', 'centerForm']">
+        <strong>{{ formName | titlecase }}:</strong>
+        <span *ngIf="formService.isFormCompleted(formName)" style="color: green;">
+          Submitted on {{ formService.getCompletionDate(formName) }}
+        </span>
+        <span *ngIf="!formService.isFormCompleted(formName)" style="color: red;">
+          Not submitted
+        </span>
+      </li>
+    </ul>
+  </div>  

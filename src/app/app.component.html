@@ -4,49 +4,53 @@
   <span><p>KIDSWIN</p></span>
   <span class="spacer"></span>
 
-  <!-- Navigation buttons -->
-  <a mat-flat-button class="toolbar" routerLink="/about">About Us</a>
-  <a mat-button class="toolbarButton" routerLink="/">Home</a>
+  <a mat-flat-button routerLink="/about">About Us</a>
+  <a mat-button routerLink="/">Home</a>
 
-  <!-- Login Button -->
+    <!-- Login Buttons -->
   <span *ngIf="!auth.isLoggedIn()">
     <button mat-button (click)="showLogin('Teacher')">Login as Teacher</button>
     <button mat-button (click)="showLogin('Parent')">Login as Parent</button>
   </span>
-  
+
   <span *ngIf="auth.isLoggedIn()">
     Logged in as {{ auth.role }} ({{ auth.username }})
     <button mat-button (click)="logout()">Logout</button>
   </span>
-
 </mat-toolbar>
 
-<!-- Login Functionality --->
-  <div *ngIf="showForm">
-    <input [(ngModel)]="username" placeholder="Username">
-    <input [(ngModel)]="password" placeholder="Password" type="password">
-    <button (click)="submitLogin()">Submit</button>
-    <button (click)="cancelLogin()">Cancel</button>
-    <p *ngIf="loginFailed">Login failed</p>
-  </div>
-  
-
-<!-- Conditional Login Form (appears when the login button is clicked) -->
-<div *ngIf="showLoginForm" class="login-container">
-  <app-login></app-login> <!-- Your LoginComponent -->
+<!-- Login form -->
+<div *ngIf="showForm">
+  <input [(ngModel)]="username" placeholder="Username">
+  <input [(ngModel)]="password" placeholder="Password" type="password">
+  <button (click)="submitLogin()">Submit</button>
+  <button (click)="cancelLogin()">Cancel</button>
+  <p *ngIf="loginFailed">Login failed</p>
 </div>
 
-<!-- Main content, where milestone component and router-outlet go -->
-<app-milestone></app-milestone>
+<!-- Asks user to login -->
+<pre *ngIf="!auth.isLoggedIn() && !showForm">
+ ___________________________________________
+|                                           |
+|                                           |
+|                                           |
+|                                           |
+|           please login to continue        |
+|                                           |
+|                                           |
+|                                           |
+|___________________________________________|
+</pre>
+
+<!-- Load routed components here -->
 <router-outlet></router-outlet>
 
-<!-- Link to attendence page for now -->
-<br><br>
-<a routerLink="/attendance">Attendance for [student]</a>
-
-<!-- Section for forms 
-  Can move this inside of student view for particular forms and status of forms -->
-<app-forms></app-forms>
+<!-- Teacher-only link -->
+<div *ngIf="auth.role === 'Teacher'">
+  <a routerLink="/attendance">Attendance for [student]</a>
+  <br><br>
+  <app-milestone></app-milestone>
+</div>
 
 <!-- Footer (mat-toolbar) -->
 <mat-toolbar class="footer">

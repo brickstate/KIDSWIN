@@ -44,4 +44,6 @@ export class MilestoneComponent {
   toggleCompleted(milestone: Milestone): void {
     milestone.completed = !milestone.completed;
   }
+
+  notes: string = '';
 }

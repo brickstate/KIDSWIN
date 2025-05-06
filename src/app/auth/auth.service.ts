@@ -6,12 +6,10 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   private teacherCreds = [
     { username: 'david_r', password: '3478*#54' },
-    { username: 'snyder', password: 'f238&@*$' }
   ];
 
   private parentCreds = [
     { username: 'hopkins', password: 'William56$hj' },
-    { username: 'kate_h', password: 'kfejk@*_' }
   ];
 
   role: 'Teacher' | 'Parent' | null = null;

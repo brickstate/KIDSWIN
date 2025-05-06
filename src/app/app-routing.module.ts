@@ -6,19 +6,23 @@ import { LoginComponent } from '../app/loginStuff/login/login.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
 import { NotFoundComponent } from '../app/loginStuff/not-found/not-found.component';
+import { RoleGuard } from './auth/role.guard';
+import { FormPageComponent } from './form-page/form-page.component';
+
 
 const routes: Routes = [
-  { path: '', component: AdminComponent }, // Set to a default component (e.g., AdminComponent or Dashboard)
-  { path: 'admin', component: AdminComponent },
-  { path: 'parent', component: ParentComponent },
+  { path: 'teacher', component: AdminComponent, canActivate: [RoleGuard], data: { role: 'Teacher' } },
+  { path: 'parent', component: ParentComponent, canActivate: [RoleGuard], data: { role: 'Parent' } },
+  { path: '', component: AdminComponent }, 
   {
     path: 'about',
     loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
   },
-  { path: 'login', component: LoginComponent }, // Separate route for login
+  { path: 'login', component: LoginComponent }, 
   { path: 'attendance', component: AttendanceComponent},
   { path: 'student-detail', component: StudentDetailComponent }, 
-  { path: '**', component: NotFoundComponent } // Catch-all for unknown routes
+  { path: 'form', component: FormPageComponent, canActivate: [RoleGuard], data: { role: ['Parent', 'Teacher'] }},
+  { path: '**', component: NotFoundComponent } 
   
 ];
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
