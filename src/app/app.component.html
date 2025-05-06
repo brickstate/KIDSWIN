@@ -15,7 +15,7 @@
   </span>
   
   <span *ngIf="auth.isLoggedIn()">
-    Logged in as {{ auth.role }}
+    Logged in as {{ auth.role }} ({{ auth.username }})
     <button mat-button (click)="logout()">Logout</button>
   </span>
 

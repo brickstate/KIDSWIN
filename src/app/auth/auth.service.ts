@@ -15,20 +15,20 @@ export class AuthService {
   ];
 
   role: 'Teacher' | 'Parent' | null = null;
+  username: string | null = null; 
 
   login(role: 'Teacher' | 'Parent', username: string, password: string): boolean {
     let valid = false;
 
     if (role === 'Teacher') {
-      valid = this.teacherCreds.some(user => user.username === username &&
-                                             user.password === password);
+      valid = this.teacherCreds.some(user => user.username === username && user.password === password);
     } else if (role === 'Parent') {
-      valid = this.parentCreds.some(user => user.username === username &&
-                                             user.password === password);
+      valid = this.parentCreds.some(user => user.username === username && user.password === password);
     }
 
     if (valid) {
       this.role = role;
+      this.username = username; 
     }
 
     return valid;
@@ -36,6 +36,7 @@ export class AuthService {
 
   logout() {
     this.role = null;
+    this.username = null;
   }
 
   isLoggedIn(): boolean {
