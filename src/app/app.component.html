@@ -21,6 +21,21 @@
 </mat-toolbar>
 
 <!-- Login form -->
+<!-- YES, i know this css inline practice looks kinda ugly... No, I dont really care because we present in less than 60 minutes xoxo -HB  -->
+<div *ngIf="showForm" style="width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; background-color: #f0f2f5;">
+  <div style="background: white; padding: 40px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 100%; max-width: 400px; text-align: center;">
+    <h2 style="margin-bottom: 20px;">Login</h2>
+    <input [(ngModel)]="username" placeholder="Username" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;" />
+    <input [(ngModel)]="password" type="password" placeholder="Password" style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;" />
+    <div style="display: flex; justify-content: space-between;">
+      <button (click)="submitLogin()" style="flex: 1; padding: 10px; margin-right: 5px; background-color: #4CAF50; color: white; border: none; border-radius: 5px;">Submit</button>
+      <button (click)="cancelLogin()" style="flex: 1; padding: 10px; margin-left: 5px; background-color: #f44336; color: white; border: none; border-radius: 5px;">Cancel</button>
+    </div>
+    <p *ngIf="loginFailed" style="color: red; margin-top: 15px;">Login failed</p>
+  </div>
+</div>
+
+<!--
 <div *ngIf="showForm">
   <input [(ngModel)]="username" placeholder="Username">
   <input [(ngModel)]="password" placeholder="Password" type="password">
@@ -28,7 +43,7 @@
   <button (click)="cancelLogin()">Cancel</button>
   <p *ngIf="loginFailed">Login failed</p>
 </div>
-
+-->
 <!-- Asks user to login -->
 <!--
 <pre *ngIf="!auth.isLoggedIn() && !showForm">
