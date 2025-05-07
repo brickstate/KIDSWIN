@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentService, AttendanceRecord, Student } from '../student.service';
+import { StudentService, AttendanceRecord, Student, DisciplineRecord } from '../student.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class StudentDetailComponent implements OnInit {
   attendanceLog: AttendanceRecord[] = [];
+  disciplineLog: DisciplineRecord[] = [];
+
   studentId: number = 0;
   studentName: string = '';
 
@@ -22,6 +24,9 @@ export class StudentDetailComponent implements OnInit {
     this.studentName = student.name;
     
     this.attendanceLog = this.studentService.getAttendance(this.studentId);
+
+    this.disciplineLog = this.studentService.getDiscipline(this.studentId);
+
   }
 }
 

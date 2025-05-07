@@ -1,0 +1,42 @@
+ <h2>Discipline History for {{studentName}}</h2>
+
+ <!-- Edit toggle -->
+ <button *ngIf="isAdmin" (click)="toggleEditing()" class="editButton">
+  Edit Discipline History
+ </button>
+ <!-- For saving the changes -->
+  <button *ngIf="isEditing" (click)="saveDisciplineLog()" class="editButton">Save Changes</button>
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Status</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let disciplineStatus of disciplineLog">
+        <td>
+          <span *ngIf="!isEditing">
+            {{ disciplineStatus.date }}
+          </span>
+          <input *ngIf="isEditing" [(ngModel)]="disciplineStatus.date">
+        </td>
+        <td>
+          <span *ngIf="!isEditing">
+            <span class="status-circle" [ngClass]="disciplineStatus.status" [title]="disciplineStatus.status"></span>
+            {{ disciplineStatus.status }}
+          </span>
+          <select *ngIf="isEditing" [(ngModel)]="disciplineStatus.status">
+            <option value="Good">Good</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Bad">Bad</option>
+          </select>
+        </td>
+        <td>
+          <span *ngIf="!isEditing">{{ disciplineStatus.notes }}</span>
+          <input *ngIf="isEditing" [(ngModel)]="disciplineStatus.notes">
+        </td>
+  </tbody>
+</table>
+
