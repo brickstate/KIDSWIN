@@ -12,7 +12,7 @@ export class AdminComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
-    if (!this.authService.isLoggedIn() || !this.authService.isAdmin()) {
+    if (!this.authService.isLoggedIn() || !this.authService.loggedInAdmin()) {
       this.router.navigate(['/']);
     }
   }
