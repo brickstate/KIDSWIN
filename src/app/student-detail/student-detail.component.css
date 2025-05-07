@@ -38,4 +38,24 @@ td {
     background-color: #e53935;
     color: white;
     cursor: pointer;
-  }
+}
+
+select.present 
+{ 
+    color: rgb(32, 156, 69); 
+    padding: 8px;
+
+}
+
+select.absent
+{
+    color: rgb(231, 29, 29);
+    padding: 8px;
+
+}
+
+.notesBox {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+}

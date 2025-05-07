@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService, AttendanceRecord, Student, DisciplineRecord } from '../student.service';
-import { Router } from '@angular/router';
+import { AuthService } from '../loginStuff/auth.service';
 
 @Component({
   selector: 'app-student-detail',
@@ -13,10 +13,16 @@ export class StudentDetailComponent implements OnInit {
 
   studentId: number = 0;
   studentName: string = '';
+  loggedInAdmin: boolean = false;
 
-  constructor(private studentService: StudentService, public router: Router) {}
+  constructor(
+    private studentService: StudentService, 
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
+    
+    this.loggedInAdmin = this.authService.loggedInAdmin();
     
     this.studentId = this.studentService.selectedStudentId;
     
