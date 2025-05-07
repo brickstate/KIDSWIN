@@ -6,14 +6,23 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   private currentUser: any = null;
 
-  constructor() { }
+  constructor() {
+
+  const savedRole = sessionStorage.getItem('userType');
+
+  if (savedRole) {
+    this.currentUser = { role: savedRole };
+  }
+  }
 
   login(role: string) {
     this.currentUser = { role };
+    sessionStorage.setItem('userType', role);
   }
 
   logout() {
     this.currentUser = null;
+    sessionStorage.removeItem('userType');
   }
 
   getCurrentUser() {
@@ -24,7 +33,7 @@ export class AuthService {
     return this.currentUser != null;
   }
 
-  isAdmin() {
+  loggedInAdmin() {
     return this.currentUser?.role === 'admin';
   }
 

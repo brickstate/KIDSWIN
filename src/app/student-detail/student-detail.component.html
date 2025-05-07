@@ -1,12 +1,3 @@
-<button class="dashboardButton" *ngIf="router.url.includes('admin/attendance/student-detail')" routerLink="/admin">
-  Dashboard (Admin) 
-</button>
-
-<button class="dashboardButton" *ngIf="router.url.includes('parent/attendance/student-detail')" routerLink="/parent">
-  Dashboard (Parent) 
-</button>
-
-
 <h2>Attendance for {{ studentName }}</h2>
 
 <table>
@@ -24,12 +15,23 @@
         <td>{{ attendenceInfo.date }}</td>
         <td>{{ attendenceInfo.checkIn }}</td>
         <td>{{ attendenceInfo.checkOut }}</td>
-        
-        <td *ngIf="attendenceInfo.presentOrAbsent === 'Present'" class="present">Present </td>
-        <td *ngIf="attendenceInfo.presentOrAbsent !== 'Present'" class="absent">Absent</td>
-        
-        <td>{{ attendenceInfo.notes }}</td>
-    </tr>
+
+        <td *ngIf="loggedInAdmin">
+          <select 
+              [(ngModel)]="attendenceInfo.presentOrAbsent"
+              [ngClass]="{ 'present': attendenceInfo.presentOrAbsent === 'Present', 'absent': attendenceInfo.presentOrAbsent !== 'Present' }">
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+          </select>
+        </td>
+
+        <td *ngIf="!loggedInAdmin"
+             [ngClass]="{ 'present': attendenceInfo.presentOrAbsent === 'Present', 'absent': attendenceInfo.presentOrAbsent !== 'Present' }">
+          {{ attendenceInfo.presentOrAbsent }}
+        </td>
+
+        <td *ngIf="loggedInAdmin"><input type="text" [(ngModel)]="attendenceInfo.notes" class="notesBox"></td>
+        <td *ngIf="!loggedInAdmin">{{ attendenceInfo.notes }}</td>
   </tbody>
 </table>
 
