@@ -4,31 +4,59 @@
   <span><p>KIDSWIN</p></span>
   <span class="spacer"></span>
 
-  <!-- Navigation buttons -->
-  <button mat-flat-button class="toolbarButton" routerLink="/about">About Us</button>
-  <button mat-button class="toolbarButton" routerLink="/home">Home</button>
+  <a mat-flat-button routerLink="/about">About Us</a>
+  <a mat-button routerLink="/">Home</a>
 
-  <!-- Login Button -->
-  <button mat-flat-button class="toolbarButton" routerLink="/login">Login</button>
+    <!-- Login Buttons -->
+  <span *ngIf="!auth.isLoggedIn()">
+    <button mat-button (click)="showLogin('Teacher')">Login as Teacher</button>
+    <button mat-button (click)="showLogin('Parent')">Login as Parent</button>
+  </span>
+
+  <span *ngIf="auth.isLoggedIn()">
+    Logged in as {{ auth.role }} ({{ auth.username }})
+    <button mat-button (click)="logout()">Logout</button>
+  </span>
+
 </mat-toolbar>
 
-<!-- Conditional Login Form (appears when the login button is clicked) -->
-<div *ngIf="showLoginForm" class="login-container">
-  <app-login></app-login> <!-- Your LoginComponent -->
+<!-- Login form -->
+<div *ngIf="showForm">
+  <input [(ngModel)]="username" placeholder="Username">
+  <input [(ngModel)]="password" placeholder="Password" type="password">
+  <button (click)="submitLogin()">Submit</button>
+  <button (click)="cancelLogin()">Cancel</button>
+  <p *ngIf="loginFailed">Login failed</p>
 </div>
 
+<!-- Asks user to login -->
+<!--
+<pre *ngIf="!auth.isLoggedIn() && !showForm">
+ ___________________________________________
+|                                           |
+|                                           |
+|                                           |
+|                                           |
+|           please login to continue        |
+|                                           |
+|                                           |
+|                                           |
+|___________________________________________|
+</pre>
+-->
 
+<!-- Load routed components here -->
 <router-outlet></router-outlet>
 
-
-
-<!-- TODO -->
-<!--
-  MOVE,, this inside of parent view for particular forms and status of forms 
-  NEED,, add data admin view of forms for specific set of students
--->
-<!-- Section for forms -->
-<!--<app-forms></app-forms>-->
+<!-- Teacher-only link -->
+<div *ngIf="auth.role === 'Teacher'">
+  <br><br>
+  <app-milestone></app-milestone>
+  <br><br>
+  <button mat-raised-button routerLink="/attendance">Attendance for [student]</button>
+  <br><br>
+  
+</div>
 
 <!-- Footer (mat-toolbar) -->
 <mat-toolbar class="footer">
