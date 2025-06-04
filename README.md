@@ -10,7 +10,7 @@ Authors of this project:
 * Joseph Curtin
 * Noah Judkins
 
-\
+
 
 
 Our team build this student view portal of a fictional childcare facility. 
