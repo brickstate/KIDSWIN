@@ -11,7 +11,8 @@ Authors of this project:
 * Noah Judkins
 
 \
-\ 
+\
+
 Our team build this student view portal of a fictional childcare facility. 
 \
 Parent Login: hopkins       Pass: William56$hj
