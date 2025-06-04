@@ -1,6 +1,22 @@
-# KidsWin
+# KidsWin 
+### Student View
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
+\
+Authors of this project: 
+* Hunter Brickers
+* Anthony Samson
+* Erik Rodriguez
+* Joseph Curtin
+* Noah Judkins
+
+\
+\ 
+Our team build this student view portal of a fictional childcare facility. 
+\
+Parent Login: hopkins       Pass: William56$hj
+\
+Admin Login: david_r        Pass: 3478*#54
 
 ## Development server
 
